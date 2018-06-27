@@ -6,7 +6,13 @@ class Reservas {
   }
   public function getReservas(){
     $array = array();
-      
+     
+    $sql = "SELECT * FROM reservas;
+    $sql = $this->$pdo->query($sql);
+     
+    if($sql->rowCount() > 0){
+      $array = $sql->fetchAll();
+    } 
       
      return $array;
   }
