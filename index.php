@@ -8,3 +8,9 @@
 
 ?>
 <h1>Reservas</h1>
+<?php
+$lista = $reservas->getReservas();
+
+foreach($lista as $item) {
+  echo $item['pessoa'].' reservou o carro '.$item['id_carro'].' entre '.$data1.' e '.$data2.'<br/>';
+}
