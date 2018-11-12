@@ -1,4 +1,8 @@
 <?php
+/*   ob_start();
+  
+  use Mpdf\Mpdf; */
+
   require 'config.php';
   require 'classes/reservas.class.php';
 
@@ -15,3 +19,15 @@ foreach($lista as $item) {
   $data2 = date('d/m/Y', strtotime($item['data_fim']));
   echo $item['pessoa'].' reservou o carro '.$item['id_carro'].' entre '.$data1.' e '.$data2.'<br/>';
 }
+
+/* 
+$html = ob_get_contents();
+ob_end_clean();
+
+require 'vendor/autoload.php';
+$mpdf = new Mpdf();
+
+$mpdf->WriteHTML($html);
+
+$mpdf->Output();
+ */
